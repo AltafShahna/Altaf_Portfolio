@@ -352,7 +352,7 @@ export default function Portfolio() {
             <WorkIcon color="primary" sx={{ mr: 2, fontSize: "2rem" }} />
             <Box>
               <Typography variant="h5" fontWeight={600}>
-                Full-Stack Developer (Freelance)
+                Full-Stack Developer (Freelance) In-Progress
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Smile With Me E-Commerce | 2026 – Present
