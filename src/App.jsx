@@ -352,10 +352,10 @@ export default function Portfolio() {
             <WorkIcon color="primary" sx={{ mr: 2, fontSize: "2rem" }} />
             <Box>
               <Typography variant="h5" fontWeight={600}>
-                Full-Stack Developer (Freelance) In-Progress
+                Full-Stack Developer (Freelance)
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
-                Smile With Me E-Commerce | 2026 – Present
+                Smile With Me E-Commerce
               </Typography>
             </Box>
           </Box>
@@ -406,7 +406,7 @@ export default function Portfolio() {
 
           <Button
             variant="outlined"
-            href="https://wts.iws-portal.com/"
+            href="https://with-thesmile.com/"
             target="_blank"
             startIcon={<CodeIcon />}
             sx={{ mt: 2, "&:hover": { bgcolor: "#7b1fa2" } }}
@@ -517,7 +517,7 @@ export default function Portfolio() {
           </ul>
           <Button
             variant="outlined"
-            href="https://pureminds.pharmavac25.com/"
+            href="https://pureminds.com.sa"
             target="_blank"
             startIcon={<CodeIcon />}
             sx={{
