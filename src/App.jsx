@@ -54,16 +54,36 @@ const skills = [
 
 export default function Portfolio() {
   return (
-    <Box sx={{ bgcolor: "#f9f9f9", minHeight: "100vh", py: 2 }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        py: 2,
+        background:
+          "radial-gradient(circle at top, #e9f4ff 0%, #f8fafc 42%, #eef2f7 100%)",
+      }}
+    >
       {/* Hero Section */}
       <Container
         component={motion.div}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        sx={{ py: 8 }}
+        sx={{ py: { xs: 4, md: 8 } }}
       >
-        <Box textAlign="center">
+        <Box
+          textAlign="center"
+          sx={{
+            maxWidth: 900,
+            mx: "auto",
+            px: { xs: 2, md: 6 },
+            py: { xs: 5, md: 7 },
+            borderRadius: 5,
+            bgcolor: "rgba(255, 255, 255, 0.78)",
+            border: "1px solid rgba(25, 118, 210, 0.12)",
+            boxShadow: "0 20px 50px rgba(15, 59, 104, 0.12)",
+            backdropFilter: "blur(10px)",
+          }}
+        >
           <Avatar
             src={develoloperimg} // Add your image path
             sx={{
@@ -76,7 +96,7 @@ export default function Portfolio() {
             loading="lazy"
           />
           <Typography
-            variant="h3"
+            variant="h2"
             fontWeight={700}
             color="text.primary"
             gutterBottom
@@ -84,6 +104,7 @@ export default function Portfolio() {
               background: "linear-gradient(45deg, #1976d2 30%, #21CBF3 90%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              fontSize: { xs: "2.4rem", md: "3.8rem" },
             }}
           >
             Altaf Ahmed
@@ -112,6 +133,7 @@ export default function Portfolio() {
                 "&:hover": { bgcolor: "#1565c0" },
                 px: 3,
                 py: 1,
+                borderRadius: 3,
               }}
             >
               Download Resume
@@ -122,7 +144,7 @@ export default function Portfolio() {
               href="https://github.com/AltafShahna"
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ px: 3, py: 1 }}
+              sx={{ px: 3, py: 1, borderRadius: 3 }}
             >
               GitHub
             </Button>
@@ -132,7 +154,7 @@ export default function Portfolio() {
               href="https://linkedin.com/in/altaf-ahmed-shahna"
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ px: 3, py: 1 }}
+              sx={{ px: 3, py: 1, borderRadius: 3 }}
             >
               LinkedIn
             </Button>
@@ -207,7 +229,7 @@ export default function Portfolio() {
           >
             Skills & Technologies
           </Typography>
-          <Grid container spacing={3} justifyContent="center">
+          <Grid container spacing={3} sx={{ justifyContent: "center" }}>
             {skills.map((skill) => (
               <Grid item xs={6} sm={4} md={3} key={skill.name}>
                 <Paper
@@ -346,13 +368,91 @@ export default function Portfolio() {
           </Box>
         </Paper>
 
+        {/* KM Alsharq */}
+        <Paper elevation={2} sx={{ p: 4, mb: 4, borderRadius: 2 }}>
+          <Box display="flex" alignItems="center" mb={2}>
+            <WorkIcon color="primary" sx={{ mr: 2, fontSize: "2rem" }} />
+            <Box>
+              <Typography variant="h5" fontWeight={600}>
+                KM Alsharq
+              </Typography>
+              <Typography variant="subtitle1" color="text.secondary">
+                Company Website & ERP
+              </Typography>
+            </Box>
+          </Box>
+
+          <Typography variant="body1" paragraph>
+            Developed an ERP platform supporting core sales and operational
+            workflows.
+          </Typography>
+
+          <ul style={{ paddingLeft: "20px" }}>
+            <li>
+              <Typography variant="body1">
+                Managed <strong>quotations</strong>,{" "}
+                <strong>sales orders</strong>, and{" "}
+                <strong>proforma invoices</strong>
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body1">
+                Built invoicing and <strong>delivery note</strong> workflows
+                with invoice status tracking
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body1">
+                Added <strong>purchase orders</strong>, product and inventory
+                management
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body1">
+                Created dashboard views for <strong>currency summaries</strong>,
+                sales order invoicing, and recent invoices
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body1">
+                Implemented <strong>cash flow</strong>, user management, and
+                role-based access control
+              </Typography>
+            </li>
+          </ul>
+
+          <Box display="flex" gap={2} flexWrap="wrap">
+            <Button
+              variant="outlined"
+              href="https://km-alsharq.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<CodeIcon />}
+              sx={{ mt: 2, "&:hover": { bgcolor: "#01579b" } }}
+            >
+              Company Website
+            </Button>
+
+            <Button
+              variant="outlined"
+              href="https://erp.km-alsharq.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<CodeIcon />}
+              sx={{ mt: 2, "&:hover": { bgcolor: "#1b5e20" } }}
+            >
+              ERP
+            </Button>
+          </Box>
+        </Paper>
+
         {/* Freelance E-Commerce */}
         <Paper elevation={2} sx={{ p: 4, mb: 4, borderRadius: 2 }}>
           <Box display="flex" alignItems="center" mb={2}>
             <WorkIcon color="primary" sx={{ mr: 2, fontSize: "2rem" }} />
             <Box>
               <Typography variant="h5" fontWeight={600}>
-                Full-Stack Developer (Freelance)
+                Full-Stack Developer
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Smile With Me E-Commerce
@@ -561,12 +661,6 @@ export default function Portfolio() {
                 Integrated with <strong>.NET</strong> backend systems and
                 optimized <strong>SQL</strong> queries, reducing API response
                 times by 40%
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body1">
-                Implemented CI/CD pipelines using <strong>Azure DevOps</strong>,
-                automating deployment processes
               </Typography>
             </li>
             <li>
